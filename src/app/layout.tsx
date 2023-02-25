@@ -1,6 +1,6 @@
 'use client';
 
-import { Navbar } from '../components';
+import { Navbar, Sidebar } from '../components';
 import { ThemeConfig } from '../config';
 import './globals.css';
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps): React.ReactNo
 						<nav>
 							<Navbar />
 						</nav>
-						{/* TODO: create sidebar */}
+						<Sidebar />
 						<main
 							style={{
 								margin: '80px auto',

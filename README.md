@@ -43,7 +43,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Custom MUI themes
 - Responsive design
 
-## Open Jira App
+## Next Ecommerce App
+
+<table>
+  <tr>
+    <td align="center" valign="center"><img src="./media/1.png" width="80%"></td>
+  </tr>
+ </table>
 
 ## Stay in touch
 
