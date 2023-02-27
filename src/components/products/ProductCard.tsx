@@ -1,4 +1,5 @@
 import { Box, Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material';
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { IProduct } from '../../interfaces';
 
@@ -18,9 +19,11 @@ export const ProductCard: React.FC<ProductCardProp> = (props): React.ReactElemen
 	return (
 		<Grid item xs={6} sm={4} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
 			<Card>
-				<CardActionArea>
-					<CardMedia className="fadeIn" component="img" image={productImage} alt={product.title} />
-				</CardActionArea>
+				<Link href="/product">
+					<CardActionArea>
+						<CardMedia className="fadeIn" component="img" image={productImage} alt={product.title} />
+					</CardActionArea>
+				</Link>
 			</Card>
 			<Box sx={{ mt: 1 }} className="fadeIn">
 				<Typography fontWeight={700}>{product.title}</Typography>
