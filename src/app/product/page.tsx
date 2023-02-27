@@ -1,7 +1,9 @@
 'use client';
 
 import { Box, Button, Chip, Grid, Typography } from '@mui/material';
+import { ItemCounter } from '../../components';
 import { initialData } from '../../data';
+import { SizeSelector, Slideshow } from './components';
 
 const product = initialData.products[0];
 
@@ -9,7 +11,7 @@ export default function ProductsPage(): React.ReactNode {
 	return (
 		<Grid container spacing={3}>
 			<Grid item xs={12} sm={7}>
-				{/* TODO: slideshow */}
+				<Slideshow images={product.images} />
 			</Grid>
 			<Grid item xs={12} sm={5}>
 				<Box display="flex" flexDirection="column">
@@ -20,8 +22,11 @@ export default function ProductsPage(): React.ReactNode {
 						$ {product.price}
 					</Typography>
 					<Box sx={{ my: 2 }}>
-						<Typography variant="subtitle2">Quantity</Typography>
-						{/* Itemcounter */}
+						<Box display="flex" alignItems="center">
+							<Typography variant="subtitle2">Quantity</Typography>
+							<ItemCounter />
+						</Box>
+						<SizeSelector sizes={product.sizes} />
 					</Box>
 					<Button color="secondary" className="circular-btn">
 						Add to cart
