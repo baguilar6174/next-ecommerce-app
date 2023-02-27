@@ -1,6 +1,7 @@
 'use client';
 
-import { Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { ProductsList } from '../components';
 import { initialData } from '../data';
 
 export default function HomePage(): React.ReactNode {
@@ -12,19 +13,7 @@ export default function HomePage(): React.ReactNode {
 			<Typography variant="h2" sx={{ marginBottom: 1 }}>
 				All products
 			</Typography>
-			<Grid container spacing={4}>
-				{initialData.products.map(
-					(product): React.ReactNode => (
-						<Grid item xs={6} sm={4} key={product.slug}>
-							<Card>
-								<CardActionArea>
-									<CardMedia component="img" image={`products/${product.images[0]}`} alt={product.title} />
-								</CardActionArea>
-							</Card>
-						</Grid>
-					)
-				)}
-			</Grid>
+			<ProductsList products={initialData.products as any} />
 		</>
 	);
 }

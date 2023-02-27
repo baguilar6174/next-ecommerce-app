@@ -27,7 +27,7 @@ import {
 
 export const Sidebar = (): React.ReactElement => {
 	return (
-		<Drawer open={true} anchor="right" sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}>
+		<Drawer open={false} anchor="right" sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}>
 			<Box sx={{ width: 250, paddingTop: 5 }}>
 				<List>
 					<ListItem>
