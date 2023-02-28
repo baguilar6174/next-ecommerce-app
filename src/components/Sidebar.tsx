@@ -12,7 +12,6 @@ import {
 } from '@mui/icons-material';
 import {
 	Box,
-	Divider,
 	Drawer,
 	IconButton,
 	Input,
@@ -22,29 +21,27 @@ import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
-	ListSubheader
+	Typography
 } from '@mui/material';
 
 export const Sidebar = (): React.ReactElement => {
 	return (
 		<Drawer open={false} anchor="right" sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}>
-			<Box sx={{ width: 250, paddingTop: 5 }}>
+			<Box sx={{ width: 300, padding: 3 }}>
 				<List>
-					<ListItem>
-						<Input
-							type="text"
-							placeholder="Buscar..."
-							endAdornment={
-								<InputAdornment position="end">
-									<IconButton aria-label="toggle password visibility">
-										<SearchOutlined />
-									</IconButton>
-								</InputAdornment>
-							}
-						/>
-					</ListItem>
+					<Input
+						type="text"
+						placeholder="Buscar..."
+						endAdornment={
+							<InputAdornment position="end">
+								<IconButton aria-label="toggle password visibility">
+									<SearchOutlined />
+								</IconButton>
+							</InputAdornment>
+						}
+					/>
 
-					<ListItemButton>
+					<ListItemButton sx={{ pt: 3 }}>
 						<ListItemIcon>
 							<AccountCircleOutlined />
 						</ListItemIcon>
@@ -94,8 +91,10 @@ export const Sidebar = (): React.ReactElement => {
 					</ListItemButton>
 
 					{/* Admin */}
-					<Divider />
-					<ListSubheader>Admin Panel</ListSubheader>
+					{/* <Divider /> */}
+					<Typography sx={{ py: 2 }} variant="subtitle1">
+						Admin Panel
+					</Typography>
 
 					<ListItemButton>
 						<ListItemIcon>

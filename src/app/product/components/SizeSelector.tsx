@@ -9,13 +9,15 @@ type SizeSelectorProp = {
 export const SizeSelector: React.FC<SizeSelectorProp> = (props): React.ReactElement => {
 	const { selectedSize, sizes } = props;
 	return (
-		<Box display="flex" justifyContent="center">
+		<Box display="flex" justifyContent="center" sx={{ my: 2 }}>
 			<Box>
-				{sizes.map((size) => (
-					<Button key={size} size="small" color={selectedSize !== size ? 'primary' : 'info'}>
-						{size}
-					</Button>
-				))}
+				{sizes.map(
+					(size): React.ReactElement => (
+						<Button key={size} size="small" variant="outlined" color={selectedSize !== size ? 'primary' : 'secondary'}>
+							{size}
+						</Button>
+					)
+				)}
 			</Box>
 		</Box>
 	);

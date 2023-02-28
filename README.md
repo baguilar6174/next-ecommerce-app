@@ -52,7 +52,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     <td align="center" valign="center"><img src="./media/2.png" width="95%"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center" valign="center"><img src="./media/3.png" width="50%"></td>
+    <td align="center" valign="center"><img src="./media/3.png" width="100%"></td>
+    <td align="center" valign="center"><img src="./media/4.png" width="85%"></td>
   </tr>
  </table>
 

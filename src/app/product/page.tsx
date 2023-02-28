@@ -28,9 +28,7 @@ export default function ProductsPage(): React.ReactNode {
 						</Box>
 						<SizeSelector sizes={product.sizes} />
 					</Box>
-					<Button color="secondary" className="circular-btn">
-						Add to cart
-					</Button>
+					<Button variant="outlined">Add to cart</Button>
 					{/* <Chip label="No available" color="error" variant="outlined" /> */}
 					<Box sx={{ mt: 3 }}>
 						<Typography variant="subtitle2">Description</Typography>
