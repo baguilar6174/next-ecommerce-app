@@ -20,7 +20,7 @@ export const CartList: React.FC<CartListProp> = (props): React.ReactElement => {
 						<Grid item xs={3}>
 							<Link href="product">
 								<CardActionArea>
-									<CardMedia image={`products/${product.images[0]}`} component="img" sx={{ borderRadius: '5px' }} />
+									<CardMedia image={`/products/${product.images[0]}`} component="img" sx={{ borderRadius: '5px' }} />
 								</CardActionArea>
 							</Link>
 						</Grid>
