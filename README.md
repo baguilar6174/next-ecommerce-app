@@ -48,16 +48,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 <table>
   <tr>
-    <td align="center" valign="center"><img src="./media/1.png" width="100%"></td>
-    <td align="center" valign="center"><img src="./media/2.png" width="95%"></td>
+    <td align="center" valign="center"><img src="./media/1.png" width="70%"></td>
+    <td align="center" valign="center"><img src="./media/2.png" width="100%"></td>
   </tr>
   <tr>
-    <td align="center" valign="center"><img src="./media/3.png" width="100%"></td>
-    <td align="center" valign="center"><img src="./media/4.png" width="85%"></td>
+    <td align="center" valign="center"><img src="./media/3.png" width="80%"></td>
+    <td align="center" valign="center"><img src="./media/4.png" width="100%"></td>
   </tr>
   <tr>
     <td align="center" valign="center"><img src="./media/5.png" width="100%"></td>
-    <td align="center" valign="center"><img src="./media/6.png" width="75%"></td>
+    <td align="center" valign="center"><img src="./media/6.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="center"><img src="./media/7.png" width="100%"></td>
+    <td align="center" valign="center"><img src="./media/8.png" width="100%"></td>
   </tr>
  </table>
 

@@ -5,7 +5,7 @@ import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import Link from 'next/link';
 
 const columns: GridColDef[] = [
-	{ field: 'id', headerName: 'Order Id', width: 100 },
+	{ field: 'id', headerName: 'Order Id', width: 200 },
 	{ field: 'fullname', headerName: 'Fullname', width: 300 },
 	{
 		field: 'paid',
@@ -26,7 +26,11 @@ const columns: GridColDef[] = [
 		width: 200,
 		sortable: false,
 		renderCell: (params: GridRenderCellParams): React.ReactElement => {
-			return <Link href={`/orders/${params.row.id}`}>View</Link>;
+			return (
+				<Link href={`/orders/${params.row.id}`}>
+					<span style={{ color: 'white' }}>View order</span>
+				</Link>
+			);
 		}
 	}
 ];
@@ -42,7 +46,7 @@ export default function OrdersPage(): React.ReactNode {
 			<Typography variant="h1" component="h1">
 				Orders history
 			</Typography>
-			<Grid container>
+			<Grid container sx={{ mt: 3 }}>
 				<Grid item xs={12} sx={{ height: '650px', width: '100%' }}>
 					<DataGrid rows={rows} columns={columns} pageSize={10} rowsPerPageOptions={[10]} />
 				</Grid>

@@ -13,7 +13,7 @@ export default function OrderPage(): React.ReactElement {
 			</Typography>
 
 			{/* <Chip sx={{ my: 2 }} label="Pending order" variant="outlined" color="error" icon={<CreditCardOffOutlined />} /> */}
-			<Chip sx={{ my: 4 }} label="Order paid" variant="outlined" color="success" icon={<CreditScoreOutlined />} />
+			<Chip sx={{ my: 3 }} label="Order paid" variant="outlined" color="success" icon={<CreditScoreOutlined />} />
 
 			<Grid container>
 				<Grid item xs={12} sm={7}>

@@ -6,21 +6,23 @@ import './globals.css';
 
 type RootLayoutProps = {
 	children: React.ReactNode;
-	pageDescription: string;
-	imageFullUrl?: string;
 };
 
 export default function RootLayout({ children }: RootLayoutProps): React.ReactNode {
+	const isLogin = true;
+
 	return (
 		<html lang="en">
 			<head />
 			<body>
 				<ThemeConfig>
 					<>
-						<nav>
-							<Navbar />
-						</nav>
-						<Sidebar />
+						{isLogin && (
+							<>
+								<Navbar />
+								<Sidebar />
+							</>
+						)}
 						<main
 							style={{
 								margin: '80px auto',
