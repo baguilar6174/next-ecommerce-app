@@ -37,12 +37,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Typescript
 - Material UI
 - React Multi Carousel
+- MongoDB
 
 ### What I learned
 
 - Using beta app dir
 - Custom MUI themes
 - Responsive design
+- Using Next API
 
 ## Next Ecommerce App
 
