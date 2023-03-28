@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ecommercedb:
+    image: mongo:5.0.0
+    container_name: ecommerce-app
+    restart: 'no'
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
+    environment:
+      MONGODB_DATABASE: ecommerce-app

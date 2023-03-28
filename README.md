@@ -20,6 +20,20 @@ yarn
 
 Step 3:
 
+Configure and start Database
+
+```
+docker-compose up -d
+```
+
+Mongo DB URL Local: `mongodb://localhost:27017/ecommercedb`
+
+Step 4:
+
+Configure environment variables, you need to rename `.env.template` to `.env file` and complete the values
+
+Step 5:
+
 Runs the app in the development mode
 
 ```
