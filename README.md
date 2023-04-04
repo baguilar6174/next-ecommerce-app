@@ -32,7 +32,13 @@ Step 4:
 
 Configure environment variables, you need to rename `.env.template` to `.env file` and complete the values
 
-Step 5:
+Step 5 (optional):
+
+You can creata fake data using the endpoint:
+
+GET: [http://localhost:3000/api/seed](http://localhost:3000/api/seed)
+
+Step 6:
 
 Runs the app in the development mode
 
