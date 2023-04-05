@@ -65,6 +65,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Custom MUI themes
 - Responsive design
 - Using Next API
+- SSR
+- SGR
+- ISR
+- Searches
+- SWR for HTTP requests
 
 ## Next Ecommerce App
 
