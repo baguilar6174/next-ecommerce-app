@@ -1,7 +1,7 @@
 'use client';
 
 import { Typography } from '@mui/material';
-import { ProductsList } from '../components';
+import { ProductsList, ScreenLoading } from '../components';
 import { useProducts } from '../hooks';
 
 export default function HomePage(): React.ReactNode {
@@ -18,7 +18,7 @@ export default function HomePage(): React.ReactNode {
 			<Typography variant="h2" sx={{ marginBottom: 1 }}>
 				All products
 			</Typography>
-			{isLoading ? <h1>Loading...</h1> : <ProductsList products={products} />}
+			{isLoading ? <ScreenLoading /> : <ProductsList products={products} />}
 		</>
 	);
 }
