@@ -1,8 +1,15 @@
+'use client';
+
 import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { AppBar, Badge, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Navbar = (): React.ReactElement => {
+	const pathname = usePathname();
+
+	console.log(pathname);
+
 	return (
 		<nav>
 			<AppBar>
@@ -14,14 +21,20 @@ export const Navbar = (): React.ReactElement => {
 					</Link>
 					<Box flex={1} />
 					<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-						<Link href="/category">
-							<Button variant="text">Men</Button>
+						<Link href="/category/women">
+							<Button>
+								<span style={{ color: pathname === '/category/women' ? 'pink' : 'white' }}>Women</span>
+							</Button>
 						</Link>
-						<Link href="/category">
-							<Button variant="text">Women</Button>
+						<Link href="/category/men">
+							<Button>
+								<span style={{ color: pathname === '/category/men' ? 'pink' : 'white' }}>Men</span>
+							</Button>
 						</Link>
-						<Link href="/category">
-							<Button variant="text">Kid</Button>
+						<Link href="/category/kid">
+							<Button>
+								<span style={{ color: pathname === '/category/kid' ? 'pink' : 'white' }}>Kid</span>
+							</Button>
 						</Link>
 					</Box>
 					<Box flex={1} />

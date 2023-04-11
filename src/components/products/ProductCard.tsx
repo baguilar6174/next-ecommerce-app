@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
@@ -14,7 +16,7 @@ export const ProductCard: React.FC<ProductCardProp> = (props): React.ReactElemen
 	const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
 	const productImage = useMemo((): string => {
-		return isHover ? `products/${product.images[1]}` : `products/${product.images[0]}`;
+		return isHover ? `/products/${product.images[1]}` : `/products/${product.images[0]}`;
 	}, [isHover, product.images]);
 
 	return (

@@ -1,11 +1,11 @@
 'use client';
 
 import { Typography } from '@mui/material';
-import { ProductsList, ScreenLoading } from '../components';
-import { useProducts } from '../hooks';
+import { ProductsList, ScreenLoading } from '../../../components';
+import { useProducts } from '../../../hooks';
 
-export default function HomePage(): React.ReactNode {
-	const { error, isLoading, products } = useProducts('/products');
+export default function CategoryPageKid(): React.ReactNode {
+	const { error, isLoading, products } = useProducts('/products?gender=kid');
 	if (error) return <div>failed to load</div>;
 
 	return (
@@ -14,7 +14,7 @@ export default function HomePage(): React.ReactNode {
 				Next Store
 			</Typography>
 			<Typography variant="h2" sx={{ marginBottom: 1 }}>
-				All products
+				Kids Section
 			</Typography>
 			{isLoading ? <ScreenLoading /> : <ProductsList products={products} />}
 		</>
