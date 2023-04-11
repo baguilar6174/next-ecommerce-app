@@ -4,11 +4,12 @@ import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { AppBar, Badge, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { useContext } from 'react';
+import { UIContext } from '../context';
 
 export const Navbar = (): React.ReactElement => {
+	const { toggleMenu } = useContext(UIContext);
 	const pathname = usePathname();
-
-	console.log(pathname);
 
 	return (
 		<nav>
@@ -48,7 +49,7 @@ export const Navbar = (): React.ReactElement => {
 							</Badge>
 						</IconButton>
 					</Link>
-					<Button>Menu</Button>
+					<Button onClick={toggleMenu}>Menu</Button>
 				</Toolbar>
 			</AppBar>
 		</nav>

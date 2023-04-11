@@ -1,3 +1,5 @@
+'use client';
+
 import {
 	AccountCircleOutlined,
 	AdminPanelSettings,
@@ -17,16 +19,26 @@ import {
 	Input,
 	InputAdornment,
 	List,
-	ListItem,
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
 	Typography
 } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import { useContext } from 'react';
+import { UIContext } from '../context';
 
 export const Sidebar = (): React.ReactElement => {
+	const { isMenuOpen, toggleMenu } = useContext(UIContext);
+	const router = useRouter();
+
 	return (
-		<Drawer open={false} anchor="right" sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}>
+		<Drawer
+			open={isMenuOpen}
+			anchor="right"
+			sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}
+			onClose={toggleMenu}
+		>
 			<Box sx={{ width: 300, padding: 3 }}>
 				<List>
 					<Input
@@ -55,21 +67,21 @@ export const Sidebar = (): React.ReactElement => {
 						<ListItemText primary={'My orders'} />
 					</ListItemButton>
 
-					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }}>
+					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }} onClick={(): void => navigateTo('men')}>
 						<ListItemIcon>
 							<MaleOutlined />
 						</ListItemIcon>
 						<ListItemText primary={'Men'} />
 					</ListItemButton>
 
-					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }}>
+					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }} onClick={(): void => navigateTo('women')}>
 						<ListItemIcon>
 							<FemaleOutlined />
 						</ListItemIcon>
 						<ListItemText primary={'Women'} />
 					</ListItemButton>
 
-					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }}>
+					<ListItemButton sx={{ display: { xs: '', sm: 'none' } }} onClick={(): void => navigateTo('kid')}>
 						<ListItemIcon>
 							<EscalatorWarningOutlined />
 						</ListItemIcon>
@@ -119,4 +131,9 @@ export const Sidebar = (): React.ReactElement => {
 			</Box>
 		</Drawer>
 	);
+
+	function navigateTo(url: string): void {
+		router.push(`/category/${url}`);
+		toggleMenu();
+	}
 };

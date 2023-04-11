@@ -3,6 +3,7 @@
 import { SWRConfig } from 'swr';
 import { Navbar, Sidebar } from '../components';
 import { ThemeConfig } from '../config';
+import { UIProvider } from '../context';
 import './globals.css';
 
 type RootLayoutProps = {
@@ -21,26 +22,28 @@ export default function RootLayout({ children }: RootLayoutProps): React.ReactNo
 						fetcher: (resource, init) => fetch(resource, init).then((res) => res.json())
 					}}
 				>
-					<ThemeConfig>
-						<>
-							{isLogin && (
-								<>
-									<Navbar />
-									<Sidebar />
-								</>
-							)}
-							<main
-								style={{
-									margin: '80px auto',
-									maxWidth: '1440px',
-									padding: '0 30px'
-								}}
-							>
-								{children}
-							</main>
-							{/* TODO: create footer */}
-						</>
-					</ThemeConfig>
+					<UIProvider>
+						<ThemeConfig>
+							<>
+								{isLogin && (
+									<>
+										<Navbar />
+										<Sidebar />
+									</>
+								)}
+								<main
+									style={{
+										margin: '80px auto',
+										maxWidth: '1440px',
+										padding: '0 30px'
+									}}
+								>
+									{children}
+								</main>
+								{/* TODO: create footer */}
+							</>
+						</ThemeConfig>
+					</UIProvider>
 				</SWRConfig>
 			</body>
 		</html>
