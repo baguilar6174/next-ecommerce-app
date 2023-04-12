@@ -22,7 +22,7 @@ export const ProductCard: React.FC<ProductCardProp> = (props): React.ReactElemen
 	return (
 		<Grid item xs={6} sm={4} onMouseEnter={(): void => setIsHover(true)} onMouseLeave={(): void => setIsHover(false)}>
 			<Card>
-				<Link href="/product">
+				<Link href={`/product/${product.slug}`}>
 					<CardActionArea>
 						<CardMedia
 							className="fadeIn"

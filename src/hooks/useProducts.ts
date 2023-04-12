@@ -12,3 +12,14 @@ export const useProducts = (url: string, config: SWRConfiguration = {}) => {
 		error
 	};
 };
+
+export const useProduct = (url: string, config: SWRConfiguration = {}) => {
+	// const { data, error, isLoading } = useSWR<IProduct[]>(`/api${url}`, fetcher, config);
+	const { data, error, isLoading } = useSWR<IProduct>(`/api${url}`, config);
+	return {
+		product: data,
+		//isLoading: !error && !data,
+		isLoading,
+		error
+	};
+};

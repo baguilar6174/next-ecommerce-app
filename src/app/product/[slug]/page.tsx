@@ -1,13 +1,27 @@
 'use client';
 
 import { Box, Button, Chip, Grid, Typography } from '@mui/material';
-import { ItemCounter } from '../../components';
-import { initialData } from '../../data';
-import { SizeSelector, Slideshow } from './components';
+import { ItemCounter } from '../../../components';
+import { useProduct } from '../../../hooks';
+import { SizeSelector, Slideshow } from '../components';
 
-const product = initialData.products[0];
+type PageParams = {
+	slug: string;
+};
 
-export default function ProductsPage(): React.ReactNode {
+type PageProps = {
+	params: PageParams;
+};
+
+export default function ProductsPage(props: PageProps): React.ReactNode {
+	const {
+		params: { slug }
+	} = props;
+	const { product, isLoading } = useProduct(`/products/${slug}`);
+
+	if (isLoading) return <h1>Loading...</h1>;
+	if (!product) return <h1>Product not fount</h1>;
+
 	return (
 		<Grid container spacing={3}>
 			<Grid item xs={12} sm={7}>
